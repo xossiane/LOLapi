@@ -1,10 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import ButtonNav from '../components/atoms/ButtonNav/ButtonNav.jsx';
+import Text from '../components/atoms/Text/Text.jsx'
+
 
 export default function Home() {
   return (
-    <h1> hi :)</h1>
+    <div>
+    <Text color="white">hello human</Text>
+    <ButtonNav>this is a button</ButtonNav>
+    </div>
     
-  )
+  );
 }
