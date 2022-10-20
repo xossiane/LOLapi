@@ -1,0 +1,13 @@
+@use "styles/variables";
+/* fonts: large, medium, small
+size: 14px, 18px, 22px;
+ */
+
+.ButtonNav{
+  display:none;
+  &--mt{
+    font-size: 2.2rem;
+    
+  }
+  
+}
