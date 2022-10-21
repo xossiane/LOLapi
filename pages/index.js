@@ -1,5 +1,6 @@
-import ButtonNav from '../components/atoms/ButtonNav/ButtonNav.jsx';
-import Text from '../components/atoms/Text/Text.jsx'
+import ButtonNav from '../components/atoms/ButtonNav';
+import Text from '../components/atoms/Text'
+import HomeScreenBackground from '../components/molecules/HomescreenBackground/index.jsx';
 
 
 export default function Home() {
@@ -7,6 +8,8 @@ export default function Home() {
     <div>
     <Text color="white">hello human</Text>
     <ButtonNav>this is a button</ButtonNav>
+    
+    <HomeScreenBackground></HomeScreenBackground>
     </div>
     
   );
