@@ -9,6 +9,6 @@ export default function ButtonNav({ mt, className, children }) {
 
 
 
-  return (<button className={`${classList.join(" ")} ${className}`} ><Text>{children}</Text></button>)
+  return (<button className={`${classList.join(" ")} ${className}`} >{children}</button>)
   
 }
