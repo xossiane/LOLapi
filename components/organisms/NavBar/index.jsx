@@ -4,10 +4,15 @@ import Text from '../../atoms/Text';
 import styles from "./NavBar.module.scss";
 
 function NavBar() {
+    
   return (
-        <div className={styles[`NavBar`]}>
+        <nav className={styles[`NavBar`]}>
+            
             <img className={styles[`NavBar--imgRiot`]} href="https://www.riotgames.com/pt-br" src="images/RIOTlogo.png"/>
-            <img className={styles[`NavBar--imgLogo`]} href="https://universe.leagueoflegends.com/pt_BR/" src="images/LOL_logomini.png"/>
+            
+            
+            <img className={styles[`NavBar--imgLogo`]}  href="https://universe.leagueoflegends.com/pt_BR/" src="images/LOL_logomini.png"/>
+            
         <section className={styles[`NavBar--items`]}>
           <li>
             <a href="/">
@@ -28,7 +33,7 @@ function NavBar() {
           </section>
 
           <ButtonNav><Text color="white" size="medium">PLAY NOW</Text></ButtonNav>
-        </div>
+        </nav>
     
 )}
 
