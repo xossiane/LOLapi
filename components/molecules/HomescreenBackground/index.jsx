@@ -5,17 +5,17 @@ import styles from "./HomeScreenBackground.module.scss";
 
 function HomeScreenBackground() {
   return (
-    <>
+    <div>
         <Background>
           
         </Background>
-        <img className={styles[`Lillia`]} src="images/lillia.png"/>
         
+        <img className={styles[`Lillia`]} src="images/lillia.png"/>
         
 
         
         
-    </>
+    </div>
   )
 }
 
