@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import {React, useState }from 'react'
+
 
 import ButtonNav from '../../atoms/ButtonNav';
 import DropDown from '../../atoms/DropDown';
@@ -8,7 +8,7 @@ import styles from "./NavBar.module.scss";
 import { NavItens } from './NavItens.js'
 
 function NavBar() {
-    
+    const [dropDown, setDropDown] = useState(false);
   return (
   <>
         <nav className={styles[`NavBar`]}>
@@ -22,6 +22,16 @@ function NavBar() {
           
           <ul className={styles[`NavBar--items`]}>
             {NavItens?.map((item) => {
+              if (item.title === "ABOUT"){
+                return(
+                <li key={item.id} className={item.cName} onMouseEnter={() => setDropDown(true)}  onMouseLeave={() => setDropDown(false)}>
+                 
+                <Text color="white" size="large" >{item.title}</Text>
+                {dropDown && <DropDown/>}
+                
+              </li>);
+              }
+
               return(
               <li key={item.id} className={item.cName} >
                 <Text color="white" size="large">{item.title}</Text>
@@ -40,7 +50,7 @@ function NavBar() {
           
         </nav>
         
-        <DropDown></DropDown>
+        
         </>
         
     
