@@ -7,9 +7,9 @@ function DropDown() {
     const [dropDown, setDropDown] = useState(false);
 
   return (
-    <>
-    <ul className={dropDown ? "DropDown--subitems clicked" : `$styles['DropDown--subitems']`} onClick={() => setDropDown(!dropDown)}>
-        {DropdownItems.map(item => {
+    <div className={styles[`DropDown--items`]}>
+    <ul className={dropDown ? `${styles['DropDown--subitemsClicked']}` : `${styles['DropDown--subitems']}`} onClick={() => setDropDown(!dropDown)}>
+    {DropdownItems.map(item => {
             return (
                 <li key={item.id} className={styles[`DropDown--subitems`]}>
                 <Text color="white" size="large" onClick={() => setDropDown(false)}>{item.title}</Text>
@@ -18,7 +18,7 @@ function DropDown() {
             )
         })}
     </ul>
-    </>
+    </div>
   )
 }
 

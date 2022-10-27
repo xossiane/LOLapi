@@ -1,41 +1,37 @@
 @use "styles/variables";
 .DropDown--items{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 0.5rem 0rem;
-    justify-content: space-around;
-    flex-direction: column;
-    background: variables.$blackGradient;
-    position: absolute;
-    top: 0;
-    display: flex;
-    z-index: 1;
-    width: 10rem;
+  
+  position: absolute;
+  text-align: start;
+  width: 100%;
+ 
 
 }
 
 
 .DropDown--items li{
    
-    
     cursor: pointer;
+    height: 1rem;
 
 }
+
+
+
 
 .DropDown--subitems{
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
+  z-index: 20;
+  display: flex;
   padding: 1.6rem;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  left: -1.5rem;
   
 
 }
 
-.DropDown--subitems.clicked{
+
+.DropDown--subitemsClicked{
    display: none;
-    
-  
   }
