@@ -3,7 +3,7 @@
 size: 14px, 18px, 22px;
  */
 
-.buttonNav{
+.buttonNav {
   background-color: variables.$BeautyBlue;
   border-radius: 10px;
   width: 15.2rem;
@@ -12,16 +12,14 @@ size: 14px, 18px, 22px;
   align-items: center;
   border: none;
   display: flex;
-    justify-content: space-around;
- 
+  justify-content: space-around;
+  cursor: pointer;
 
-  &--mt{
+  &--mt {
     font-size: 2.2rem;
     border-radius: 0px;
-    background: url('/images/buttonFrameImg.png') 0 0;
+    background: url("/images/buttonFrameImg.png") 0 0;
     background-size: cover;
-    
+    cursor:pointer;
   }
-  
-  
 }
