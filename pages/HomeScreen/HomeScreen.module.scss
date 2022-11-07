@@ -18,6 +18,7 @@
 .buttonNav--mt{
     display: flex;
     position: relative;
+   
 }
 
 
@@ -27,4 +28,13 @@
     align-items: center;
     margin-left: 30%;
     margin-top: 6%;
+}
+
+.TESTE{
+    position: absolute;
+    display: flex;
+    width: 15rem;
+    height: 5rem;
+    z-index: 5;
+
 }
