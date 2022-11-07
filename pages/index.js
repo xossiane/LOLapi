@@ -2,7 +2,7 @@ import HomeScreen from '../pages/HomeScreen/index.jsx'
 
 export default function Home() {
   return (
-    <div>
+    <div id="root">
       <HomeScreen> </HomeScreen>
       
     </div>
