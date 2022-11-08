@@ -7,12 +7,21 @@ export const Modal = ({ modalIsOpen, setIsOpen }) => {
     <>
       {modalIsOpen ? (
         <div className={styles[`Modal`]}>
-          <Text size="large">GET IN</Text>
-          <Text> summoner's name</Text>
+          <div className={styles[`Modal__title`]}><Text size="60 rem" style="italic">GET IN</Text></div>
+          
+          
           <section className={styles[`Modal__selector`]}>
+            <form className={styles[`Modal__input--position`]}>
+            <Text size="medium" className={styles[`Modal__input--label`]}> summoner's name</Text>
             <input className={styles[`Modal__input`]} placeholder="type your summoner's name"></input>
-            <ButtonNav><Text color="white" size="large">BR <button className={styles[`button`]}><Text color="white" size="large">▼</Text></button></Text></ButtonNav>
+            
+            </form>
+            <ButtonNav className={styles[`Modal__input--server`]}><Text color="white" size="large">BR <button className={styles[`button`]}><Text color="white" size="large">▼</Text></button></Text></ButtonNav>
+            
           </section>
+          <ButtonNav mt="mt" className={styles[`Modal__input--btn`]}><Text color="white">SEARCH</Text></ButtonNav>
+          
+          
         </div>
       ) : null}
     </>
