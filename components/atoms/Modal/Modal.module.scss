@@ -1,16 +1,38 @@
 @use "styles/variables";
 
 .Modal{
-  background-color: white;
-  z-index: 20;
-  display: flex;
-  position: absolute;
+  background-color: variables.$white;
+  z-index: 9999;
+  display: block;
+  position: fixed;
   width: 70.4rem;
   height: 43.3rem;
   color: black;
   margin: auto;
   border-radius: 1.6rem;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s linear;
+  overflow: auto;
+  
+
+  &__btn{
+    border: none;
+    background-color: variables.$inputColor;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    right:0;
+    top:0;
+    margin-right: 2.5rem;
+    margin-top: 2rem;
+    position: absolute;
+    justify-content: center;
+    padding:0;
+    
+  }
   &__title{
     display: flex;
     margin: 4rem auto 3rem auto;
@@ -61,9 +83,7 @@
   }
 }
 
-.show {
-  display: block !important;
-}
+
 .button {
   border: none;
   background-color: transparent;
@@ -72,3 +92,4 @@
     box-shadow: 10rem black;
   }
 }
+
