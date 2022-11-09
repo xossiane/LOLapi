@@ -1,12 +1,13 @@
 import React from 'react'
 import Background from '../../atoms/Background'
 import styles from "./HomeScreenBackground.module.scss";
+import HomeScreen from "../../../public/images/HomeScreen.png"
 
 
 function HomeScreenBackground() {
   return (
     <div>
-        <Background>
+        <Background src={HomeScreen}>
           
         </Background>
         
