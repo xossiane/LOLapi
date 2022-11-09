@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Modal.module.scss";
 import Text from "../Text";
 import ButtonNav from "../ButtonNav";
+import Link from "next/link";
+
 export const Modal = ({ modalIsOpen, setIsOpen }) => {
   
   
@@ -43,9 +45,11 @@ export const Modal = ({ modalIsOpen, setIsOpen }) => {
               </Text>
             </ButtonNav>
           </section>
+          <Link href="/Summoner">
           <ButtonNav mt="mt" className={styles[`Modal__input--btn`]}>
             <Text color="white">SEARCH</Text>
           </ButtonNav>
+          </Link>
         </div>
         
        
