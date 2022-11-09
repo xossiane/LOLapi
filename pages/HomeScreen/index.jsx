@@ -12,18 +12,13 @@ export default function HomeScreen() {
   
 
   const [modalIsOpen, setIsOpen] = useState(false);
-  
-
 
   function openModal(){
     console.log("this is true")
     setIsOpen(prev => !prev);
     
   }
-  function closeModal(){
-    setIsOpen(false);
-    console.log("this is true")
-  }
+  
 
   return (
     <div>
@@ -38,7 +33,7 @@ export default function HomeScreen() {
        <Modal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen}/>
         
       </section>
-      <button className={styles[`TESTE`]} onClick={openModal} >hello</button>
+      
     </div>
   );
 }

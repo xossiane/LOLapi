@@ -1,24 +1,27 @@
-export const NavItens = [{
+export const NavItens = [
+    {
     id: 1,
-    title: "ABOUT",
-    path: "./about",
+    title: "HOME",
+    path: "./",
     cName: ""
     },
-    {   id: 2,
+    {
+        id: 2,
+        title: "ABOUT",
+        path: "./about",
+        cName: ""
+        },
+    {   id: 3,
         title: "CHAMPIONS",
-        path: "./champions",
+        path: "./summoner",
         cName: "",
     },
-    {   id: 3,
+    {   id: 4,
         title: "NEWS",
         path: "./news",
         cName: "",
     },
-    {   id: 4,
-        title: "PROFILE",
-        path: "./profile",
-        cName: "",
-    }
+   
 ]
 
 export const DropdownItems = 

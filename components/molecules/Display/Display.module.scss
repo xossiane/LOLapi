@@ -1,0 +1,40 @@
+@use "styles/variables";
+
+.Display {
+  background-color: variables.$white;
+  opacity: 0.3;
+  width: 70.4rem;
+  height: 62.7rem;
+  border-radius: 1.6rem;
+  margin: 5% 65% 5% 5%;
+  display: flex;
+  flex-direction: column;
+  &__Title {
+    margin: 5% auto 5% auto;
+  }
+  &__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 500rem;
+    margin-top: -25rem;
+    &--tag{
+    margin-left: 5%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 28%;
+  }
+&--input{
+    
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 28%;
+    margin-right: 3rem;
+}}
+}

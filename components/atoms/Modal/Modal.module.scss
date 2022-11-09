@@ -1,41 +1,89 @@
 @use "styles/variables";
 
-.Modal {
-  background-color: white;
-  z-index: 20;
-  display: flex;
-  position: absolute;
+.Modal{
+  background-color: variables.$white;
+  z-index: 9999;
+  display: block;
+  position: fixed;
   width: 70.4rem;
-  height: 53.3rem;
+  height: 43.3rem;
   color: black;
   margin: auto;
   border-radius: 1.6rem;
-  &__input {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s linear;
+  overflow: auto;
+  
+
+  &__btn{
+    border: none;
+    background-color: variables.$inputColor;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    right:0;
+    top:0;
+    margin-right: 2.5rem;
+    margin-top: 2rem;
+    position: absolute;
+    justify-content: center;
+    padding:0;
+    
+  }
+  &__title{
+    display: flex;
+    margin: 4rem auto 3rem auto;
+    position: relative;
+    flex-direction: column;
+    width: 40.2rem;
+    font-size: 6.0rem;
+    height: 5.9rem;
+    justify-content: center;
+    align-items: center;
+  }
+ &__selector{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 3rem auto;
+ }
+  &__input{
+    
     width: 32.7rem;
     height: 6.9rem;
     background-color: #ebebeb;
     border-radius: 1.6rem;
     border: none;
-    font-size: 2.2rem;
-    font-weight: 700;
     font-size: 1.8rem;
     line-height: 2.4rem;
-    ::placeholder {
-      padding: 0;
-      border: 0;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: -0.02em;
-      color: white;
-      opacity: 0.8;
-      margin-right: 1rem;
+    padding-left: 3rem;
+    letter-spacing: 0.02em;
+    &--server{
+      margin-top: 3rem;
+      margin-left: 3rem;
     }
+    &--label{
+      padding-left: 3rem;
+      padding-bottom: 1rem;
+
+    }
+   &--position{
+    display: flex;
+    flex-direction: column;
+    
+   } 
+   &--btn{
+    margin: auto auto;
+    position: relative;
+   }
   }
 }
 
-.show {
-  display: block !important;
-}
+
 .button {
   border: none;
   background-color: transparent;
@@ -44,3 +92,4 @@
     box-shadow: 10rem black;
   }
 }
+
