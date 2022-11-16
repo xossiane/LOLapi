@@ -11,7 +11,7 @@ function HomeScreenBackground() {
           
         </Background>
         
-        <img className={styles[`Lillia`]} src="images/lillia.png"/>
+        <img className={styles[`Lillia`]} alt="lillia background" src="images/lillia.png"/>
         
 
         
