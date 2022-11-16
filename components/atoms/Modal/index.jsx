@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Modal.module.scss";
 import Text from "../Text";
 import ButtonNav from "../ButtonNav";
 import Link from "next/link";
+import axios from "axios";
 
-export const Modal = ({ modalIsOpen, setIsOpen }) => {
+export const Modal = ({ modalIsOpen, setIsOpen}) => {
+  const [summoner, setSummoner] = useState();
+  const API_KEY = "RGAPI-03bed577-e85d-45a0-9b24-86652abcfbb3";
   
-  
+function searchForPlayer(event){
+//Set up the correct API call
+var APICallString = "https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ summoner + "?api_key=" + API_KEY
+
+//Handle the API call
+axios.get(APICallString).then(function(response){
+  //Sucess
+  console.log(response)
+}).catch(function(error){
+  console.log(error)
+
+})
+}
+
+
   return (
     <>
       {modalIsOpen ? (
@@ -32,6 +49,7 @@ export const Modal = ({ modalIsOpen, setIsOpen }) => {
               <input
                 className={styles[`Modal__input`]}
                 placeholder="type your summoner's name"
+                onChange={e => setSummoner(e.target.value)}
               ></input>
             </form>
             <ButtonNav className={styles[`Modal__input--server`]}>
@@ -45,8 +63,8 @@ export const Modal = ({ modalIsOpen, setIsOpen }) => {
               </Text>
             </ButtonNav>
           </section>
-          <Link href="/Summoner">
-          <ButtonNav mt="mt" className={styles[`Modal__input--btn`]}>
+          <Link href={"/Summoner"}>
+          <ButtonNav mt="mt" className={styles[`Modal__input--btn`]} onClick={e => searchForPlayer(e)}>
             <Text color="white">SEARCH</Text>
           </ButtonNav>
           </Link>
