@@ -6,7 +6,7 @@ import Display from '../../components/molecules/Display'
 function SummonerPage() {
   return (
     <>
-    <img className={styles[`Background`]} src="images/BackgroundSummoner.png"/>
+    <img className={styles[`Background`]} alt="Main Background" src="images/BackgroundSummoner.png"/>
     <NavBar></NavBar>
     <Display></Display>
     </>
