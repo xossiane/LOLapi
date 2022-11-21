@@ -1,4 +1,4 @@
-/* var express = require('express');
+var express = require('express');
 var cors = require('cors');
 
 
@@ -14,7 +14,7 @@ app.listen(3001, function() {
 });
 
 
-async function getPlayerPUUID(playerName) {
+export default async function getPlayerPUUID(playerName) {
   return axios
     .get(
       "https://br1.api.riotgames.com" +
@@ -27,7 +27,9 @@ async function getPlayerPUUID(playerName) {
       console.log(response.data);
       return response.data.puuid;
     }).catch(err => err);
+    
 }
+
 
 app.get("/Summoner", async (req, res) => {
   const playerName = "k33proll1ng";
@@ -65,4 +67,3 @@ console.log(gameIDs);
 });
 
 
- */

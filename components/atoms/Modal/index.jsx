@@ -7,7 +7,8 @@ import axios from "axios";
 import getPlayerPUUID from "../../../proxyServer"
 
 export const Modal = ({ modalIsOpen, setIsOpen}) => {
-  const [summoner, setSummoner] = useState();
+  const [summoner, setSummoner] = useState("");
+  const [info, setInfo] = useState([]);
   /*const API_KEY = "RGAPI-03bed577-e85d-45a0-9b24-86652abcfbb3";
   
 function searchForPlayer(event){
@@ -23,6 +24,15 @@ axios.get(APICallString).then(function(response){
 
 })
 } */
+
+function getData(e){
+  axios.get("http://localhost:3000/Summoner")
+  .then(function (response){
+    getPlayerPUUID(response.data)
+  }).catch(function(error){
+    console.log(error)
+  })
+}
 
 
   return (
@@ -65,7 +75,7 @@ axios.get(APICallString).then(function(response){
             </ButtonNav>
           </section>
           <Link href={"/Summoner"}>
-          <ButtonNav mt="mt" className={styles[`Modal__input--btn`]} onClick={e => getPlayerPUUID(e)}>
+          <ButtonNav mt="mt" className={styles[`Modal__input--btn`]} onClick={e => getData(e)}>
             <Text color="white">SEARCH</Text>
           </ButtonNav>
           </Link>
