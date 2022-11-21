@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "nodemon proxyServer.js",
     "lint": "next lint"
+   
   },
   "dependencies": {
     "axios": "^1.1.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "next": "12.3.1",
+    "nodemon": "^2.0.20",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-modal": "^3.16.1",
@@ -22,5 +26,10 @@
     "eslint-config-next": "12.3.1",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }

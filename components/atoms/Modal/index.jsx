@@ -4,10 +4,11 @@ import Text from "../Text";
 import ButtonNav from "../ButtonNav";
 import Link from "next/link";
 import axios from "axios";
+import getPlayerPUUID from "../../../proxyServer"
 
 export const Modal = ({ modalIsOpen, setIsOpen}) => {
   const [summoner, setSummoner] = useState();
-  const API_KEY = "RGAPI-03bed577-e85d-45a0-9b24-86652abcfbb3";
+  /*const API_KEY = "RGAPI-03bed577-e85d-45a0-9b24-86652abcfbb3";
   
 function searchForPlayer(event){
 //Set up the correct API call
@@ -21,7 +22,7 @@ axios.get(APICallString).then(function(response){
   console.log(error)
 
 })
-}
+} */
 
 
   return (
@@ -64,7 +65,7 @@ axios.get(APICallString).then(function(response){
             </ButtonNav>
           </section>
           <Link href={"/Summoner"}>
-          <ButtonNav mt="mt" className={styles[`Modal__input--btn`]} onClick={e => searchForPlayer(e)}>
+          <ButtonNav mt="mt" className={styles[`Modal__input--btn`]} onClick={e => getPlayerPUUID(e)}>
             <Text color="white">SEARCH</Text>
           </ButtonNav>
           </Link>
