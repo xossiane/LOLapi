@@ -1,13 +1,38 @@
-var express = require('express');
+import Cors from 'cors'
+import { NextApiRequest, NextApiResponse } from 'next'
+import axios from 'axios';
+
+
+
+
+
+const cors = Cors({
+  methods: [ 'POST', 'GET', 'HEAD'],
+})
+
+const API_KEY = "RGAPI-63d85ed5-31c2-4693-bc02-ca2ccc75000b";
+const playerName = "k33proll1ng";
+
+
+
+export default function handler(req, res){
+   var APICallString = "https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ playerName + "?api_key=" + API_KEY
+
+  res.status(200).json(APICallString)
+}
+
+
+
+
+
+/* var express = require('express');
 var cors = require('cors');
-
-
-const axios = require('axios');
+var axios = require('axios');
 
 var app = express();
 app.use(cors());
 
-const API_KEY = "RGAPI-f26729d9-2145-420a-a19f-343c7cdcc5d4";
+const API_KEY = "RGAPI-63d85ed5-31c2-4693-bc02-ca2ccc75000b";
 
 app.listen(3001, function() {
   console.log("server started on port 3001");
@@ -38,6 +63,7 @@ app.get("/Summoner", async (req, res) => {
   const API_CALL = "https://americas.api.riotgames.com" + "/lol/match/v5/by-puuid" + PUUID + "/ids" + "?api_key=" +
   API_KEY
 
+
   //get API_CALL
   //its going to give us a list of game IDs
   const gameIDs = await axios.get(API_CALL)
@@ -67,3 +93,4 @@ console.log(gameIDs);
 });
 
 
+ */

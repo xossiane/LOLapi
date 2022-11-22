@@ -4,10 +4,11 @@ import Text from "../Text";
 import ButtonNav from "../ButtonNav";
 import Link from "next/link";
 import axios from "axios";
-import getPlayerPUUID from "../../../proxyServer"
+import { getPlayerPUUID } from "../../../proxyServer.js"
 
 export const Modal = ({ modalIsOpen, setIsOpen}) => {
   const [summoner, setSummoner] = useState("");
+  
   const [info, setInfo] = useState([]);
   /*const API_KEY = "RGAPI-03bed577-e85d-45a0-9b24-86652abcfbb3";
   
@@ -40,7 +41,7 @@ function getData(e){
       {modalIsOpen ? (
         <div className={styles[`Modal`]}>
           <button
-            onClick={() => setIsOpen((prev) => !prev)}
+            onClick={(e) => setIsOpen((prev) => !prev)}
             className={styles[`Modal__btn`]}
           >
             <Text size="large">✖</Text>
