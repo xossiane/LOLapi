@@ -1,96 +1,31 @@
-import Cors from 'cors'
-import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios';
+import NextCors from 'nextjs-cors';
+const express = require('express')
+const app = express()
+const cors = require("cors");
+
+app.use(cors({
+  origin: 'http://127.0.0.1:3000',
+}))
 
 
-
-
-
-const cors = Cors({
-  methods: [ 'POST', 'GET', 'HEAD'],
+app.get('/', (req, res) => {
+  res.send('Who is anybody?')
 })
 
-const API_KEY = "RGAPI-63d85ed5-31c2-4693-bc02-ca2ccc75000b";
-const playerName = "k33proll1ng";
 
+async function handler(req, res) {
+   // Run the cors middleware
+   // nextjs-cors uses the cors package, so we invite you to check the documentation https://github.com/expressjs/cors
+   const API_KEY = "RGAPI-a90bb6fd-129c-42a7-9fdb-4e1d86c7632d";
+   await NextCors(req, res, {
+      // Options
+      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+      origin: 'https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/k33proll1ng?api_key=RGAPI-a90bb6fd-129c-42a7-9fdb-4e1d86c7632d',
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+   });
 
-
-export default function handler(req, res){
-   var APICallString = "https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ playerName + "?api_key=" + API_KEY
-
-  res.status(200).json(APICallString)
+   // Rest of the API logic
+   res.json("origin");
 }
 
-
-
-
-
-/* var express = require('express');
-var cors = require('cors');
-var axios = require('axios');
-
-var app = express();
-app.use(cors());
-
-const API_KEY = "RGAPI-63d85ed5-31c2-4693-bc02-ca2ccc75000b";
-
-app.listen(3001, function() {
-  console.log("server started on port 3001");
-});
-
-
-export default async function getPlayerPUUID(playerName) {
-  return axios
-    .get(
-      "https://br1.api.riotgames.com" +
-        "summoner/v4/summoners/by-name/" +
-        playerName +
-        "?api_key=" +
-        API_KEY
-    )
-    .then((response) => {
-      console.log(response.data);
-      return response.data.puuid;
-    }).catch(err => err);
-    
-}
-
-
-app.get("/Summoner", async (req, res) => {
-  const playerName = "k33proll1ng";
-  //PUUID
-  const PUUID = await getPlayerPUUID(playerName)
-  const API_CALL = "https://americas.api.riotgames.com" + "/lol/match/v5/by-puuid" + PUUID + "/ids" + "?api_key=" +
-  API_KEY
-
-
-  //get API_CALL
-  //its going to give us a list of game IDs
-  const gameIDs = await axios.get(API_CALL)
-    .then(response => response.data)
-    .catch(err => err)
-    //list of game ID strings
-
-console.log(gameIDs);
-
-  //loop through game IDs
-  //at each loop, get the information based off ID - API CALL -
-  var matchDataArray = [];
-  for(var i = 0; i < gameIDs.lenght - 15; i++){
-    const matchID = gameIDs[i];
-    const matchData = await axios.get("https://americas.api.riotgames.com" + "lol/match/v5/matches/" + matchID + "?api_key=" +
-    API_KEY)
-    .then(response => response.data)
-    .catch(err => err)
-    matchDataArray.push(matchData)
-
-
-  }
-  //save information above in an array, give array as JSON response to user
-  res.json(matchDataArray);
-  
-
-});
-
-
- */
+export default handler

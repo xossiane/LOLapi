@@ -4,7 +4,7 @@ import Text from "../Text";
 import ButtonNav from "../ButtonNav";
 import Link from "next/link";
 import axios from "axios";
-import { getPlayerPUUID } from "../../../proxyServer.js"
+import { handler } from "../../../proxyServer.js"
 
 export const Modal = ({ modalIsOpen, setIsOpen}) => {
   const [summoner, setSummoner] = useState("");
@@ -29,7 +29,7 @@ axios.get(APICallString).then(function(response){
 function getData(e){
   axios.get("http://localhost:3000/Summoner")
   .then(function (response){
-    getPlayerPUUID(response.data)
+    handler(response.data)
   }).catch(function(error){
     console.log(error)
   })

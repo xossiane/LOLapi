@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-
 module.exports = {
-  reactStrictMode: false,
-  webpack5: true,
-  webpack: (config) => {
-    config.resolve.fallback = {fs: false};
-    return config;
-  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/proxyServer.js',
+        destination: 'http://localhost:4000/'
+      }
+    ]
+  }
 }
