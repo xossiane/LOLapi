@@ -8,9 +8,10 @@ app.use(cors({
 }))
 
 
-app.get('/', (req, res) => {
+app.get('/4000', (req, res) => {
   res.send('Who is anybody?')
 })
+
 
 
 async function handler(req, res) {

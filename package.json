@@ -2,11 +2,11 @@
   "name": "api-lol",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:4000",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node api/proxyServer.js",
+    "start": "nodemon api/proxyServer.js",
     "lint": "next lint"
   },
   "dependencies": {
