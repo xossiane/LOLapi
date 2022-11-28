@@ -25,7 +25,7 @@ export default function HomeScreen() {
       <NavBar></NavBar>
       <HomeScreenBackground></HomeScreenBackground>
       <section className={styles[`HomeScreen__Container`]}>
-        <img className={styles[`logo`]} src="images/LOL_logo.png" />
+        <img className={styles[`logo`]} alt="lol logo"src="images/LOL_logo.png" />
 
         <ButtonNav className={styles[`buttonNav--mt`]} mt="mt" onClick={openModal}>
           <Text color="white"  >GET IN</Text>
