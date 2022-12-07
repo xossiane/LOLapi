@@ -9,6 +9,11 @@
     width: 40vw;
     height: 80vh; 
     padding-top: 3rem;
-
+   @media (min-width: 375px){
+    height: 80vh;
+    width: 90vh;
+    margin-left: -10rem;
+    
+   }
 }
 

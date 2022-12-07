@@ -2,3 +2,12 @@ $BeautyBlue: #00D2F4;
 $blackGradient: linear-gradient(180deg, rgba(42, 41, 40, 0.97479) 25.53%, rgba(217, 217, 217, 0) 75.97%);
 $white: #fff;
 $inputColor: #EBEBEB;
+
+/* breakpoints media query */
+$mobile: 375px;
+$tablet: 700px;
+$tablet-x: 810px;
+$desktop: 1024px;
+$desktop-x: 1270px;
+$desktop-xm: 1400px;
+$desktop-xl: 1440px;

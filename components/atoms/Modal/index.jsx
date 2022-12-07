@@ -4,7 +4,7 @@ import Text from "../Text";
 import ButtonNav from "../ButtonNav";
 import Link from "next/link";
 import axios from "axios";
-import { handler } from "../../../proxyServer.js"
+
 
 export const Modal = ({ modalIsOpen, setIsOpen}) => {
   const [summoner, setSummoner] = useState("");

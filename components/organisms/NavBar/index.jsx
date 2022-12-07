@@ -5,6 +5,9 @@ import DropDown from "../../atoms/DropDown";
 import Text from "../../atoms/Text";
 import styles from "./NavBar.module.scss";
 import { NavItens } from "./NavItens.js";
+import Burguer from "./Burguer";
+
+
 
 function NavBar() {
   const [dropDown, setDropDown] = useState(false);
@@ -62,6 +65,8 @@ function NavBar() {
             </Text>
           </ButtonNav>
         </Link>
+        <Burguer />
+        
       </nav>
     </>
   );
